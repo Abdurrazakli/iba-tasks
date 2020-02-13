@@ -1,0 +1,12 @@
+1. generate a string of length 30 containing random small letters
+2. generate a string of length 25 containing random capital letters
+3. generate a string of length 35 containing random mixed capital + small letters
+4. generate a string of length 20 containing only vowels small letters
+5. generate a string of length 20 containing only consonants small letters
+6. generate a string of length 20 containing only vowels capital letters
+7. generate a string of length 20 containing only consonants capital letters
+8. generate a string of length 20 containing only consonants capital and small letters
+9. ...
+10. split given string into capital and small letters
+11. split given string into vowel and consonant letters
+12. split given string into vowel small, vowel capital, consonant small and consonant capital letters

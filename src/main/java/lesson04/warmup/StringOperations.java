@@ -31,24 +31,8 @@ public class StringOperations {
 
     }
     private static boolean isVowel(char letter){
-        for (int i = 0; i < VOWELS.length ; i++) {
-            if(letter == VOWELS[i]){
-                return true;
-            }
-        }
-        return false;
-    }
-    private static String generateRandomConsonants(int length,LetterSizes sizes){
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < length ; ) {
-            char randomLetter;
-            randomLetter = generateRandomLetter(sizes);
-            if(isConsonant(randomLetter)){
-                i++;
-               stringBuilder.append(randomLetter);
-            }
-        }
-        return stringBuilder.toString();
+        String vowels = "aeiou";
+        return vowels.indexOf(Character.toLowerCase(letter)) >= 0;
     }
     private static boolean isConsonant(char letter){
         return !isVowel(letter);
@@ -100,5 +84,17 @@ public class StringOperations {
     private static int generateRandomNumber(int start, int end){
         Random random = new Random();
         return random.nextInt(end - start + 1) + start;
+    }
+    private static String generateRandomConsonants(int length,LetterSizes sizes){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < length ; ) {
+            char randomLetter;
+            randomLetter = generateRandomLetter(sizes);
+            if(isConsonant(randomLetter)){
+                i++;
+                stringBuilder.append(randomLetter);
+            }
+        }
+        return stringBuilder.toString();
     }
 }
