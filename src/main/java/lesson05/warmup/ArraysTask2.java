@@ -8,12 +8,25 @@ public class ArraysTask2 {
         int MIN = -100;
         int MAX = 100;
         int[] randomArray = generateRandomArray(length,MIN,MAX);
-        System.out.printf("Before: %s \n",Arrays.toString(randomArray));
+        int[] randomArray2 = Arrays.copyOf(randomArray,randomArray.length);
+        int[] randomArray3 = Arrays.copyOf(randomArray,randomArray.length);
+
+        System.out.printf("Original: %s \n",Arrays.toString(randomArray));
         randomArray = shiftPositive(randomArray);
         System.out.printf("After:positive: %s\n",Arrays.toString(randomArray));
+        randomArray2 = shiftNegative(randomArray2);
+        System.out.printf("After:negative: %s\n",Arrays.toString(randomArray2));
+        randomArray3 = combineShifting(randomArray3);
+        System.out.printf("After:full %s\n",Arrays.toString(randomArray3));
         randomArray = shiftNegative(randomArray);
-        System.out.printf("After:negative: %s\n",Arrays.toString(randomArray));
+        System.out.printf("Original:first positive,then negative: %s\n",Arrays.toString(randomArray));
 
+    }
+
+    private static int[] combineShifting(int[] randomArray) {
+        randomArray = shiftNegative(randomArray);
+        randomArray = shiftPositive(randomArray);
+        return randomArray;
     }
 
     private static int[] shiftNegative(int[] randomArray) {
