@@ -10,11 +10,46 @@ public class ArraysTask2 {
         int[] randomArray = generateRandomArray(length,MIN,MAX);
         System.out.printf("Before: %s \n",Arrays.toString(randomArray));
         randomArray = shiftPositive(randomArray);
-        System.out.printf("After: %s",Arrays.toString(randomArray));
+        System.out.printf("After:positive: %s\n",Arrays.toString(randomArray));
+        randomArray = shiftNegative(randomArray);
+        System.out.printf("After:negative: %s\n",Arrays.toString(randomArray));
+
     }
+
+    private static int[] shiftNegative(int[] randomArray) {
+        int firstNegativeIndex = -1;
+        int shiftedValue = 0;
+        int temp = 0;
+        boolean firstNegativeFound = false;
+        for (int i = randomArray.length - 1; i >= 0; i--) {
+            if(isNegative(randomArray[i])){
+                if(firstNegativeFound == false ){
+                    firstNegativeIndex = i;
+                    firstNegativeFound = true;
+                    shiftedValue = randomArray[i];
+                    temp = randomArray[i];
+                }
+                else{
+                    temp = randomArray[i];
+                    randomArray[i] = shiftedValue;
+                    shiftedValue = temp;
+                }
+            }
+        }
+        if(firstNegativeFound == true){
+            randomArray[firstNegativeIndex] = temp;
+        }
+        return randomArray;
+    }
+
+    private static boolean isNegative(int number) {
+        return number < 0;
+    }
+
     public static boolean isPossitive(int number){
         return number > 0;
     }
+
     private static int[] shiftPositive(int[] randomArray) {
         int firstPositiveIndex = -1;
         int shiftedValue = 0;
