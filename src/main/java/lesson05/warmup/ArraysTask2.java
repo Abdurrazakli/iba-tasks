@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArraysTask2 {
     public static void main(String[] args) {
-        int length = 20;
+        int length = 10;
         int MIN = -100;
         int MAX = 100;
         int[] randomArray = generateRandomArray(length,MIN,MAX);
@@ -40,7 +40,6 @@ public class ArraysTask2 {
                     firstNegativeIndex = i;
                     firstNegativeFound = true;
                     shiftedValue = randomArray[i];
-                    temp = randomArray[i];
                 }
                 else{
                     temp = randomArray[i];
@@ -50,7 +49,7 @@ public class ArraysTask2 {
             }
         }
         if(firstNegativeFound == true){
-            randomArray[firstNegativeIndex] = temp;
+            randomArray[firstNegativeIndex] = shiftedValue;
         }
         return randomArray;
     }
@@ -74,7 +73,6 @@ public class ArraysTask2 {
                     firstPositiveIndex = i;
                     firstPossitiveFound = true;
                     shiftedValue = randomArray[i];
-                    temp = randomArray[i];
                 }
                 else{
                     temp = randomArray[i];
@@ -84,7 +82,7 @@ public class ArraysTask2 {
             }
         }
         if(firstPossitiveFound == true){
-            randomArray[firstPositiveIndex] = temp;
+            randomArray[firstPositiveIndex] = shiftedValue;
         }
         return randomArray;
     }
