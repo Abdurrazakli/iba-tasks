@@ -10,7 +10,6 @@ public class ArraysTasks {
     }
     public static int[] fill(final int length,boolean isOdd){
         int[] array = new int[length];
-        int oddValue = isOdd ? 1 : 0;
         final int MAX = 100;
         int randomNumber;
         for (int i = 0; i < length;i++) {
