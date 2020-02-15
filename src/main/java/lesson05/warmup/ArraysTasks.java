@@ -5,31 +5,31 @@ import java.util.Arrays;
 public class ArraysTasks {
     public static void main(String[] args) {
         final int n = 5;
-        int[] odds = new int[n];
-        int[] evens = new int[n];
-        int[] combined = new int[n * 2];
-        final int MAX = 99;
+        System.out.println(Arrays.toString(combine(fill(n,true),fill(n,false))));
+
+    }
+    public static int[] fill(final int length,boolean isOdd){
+        int[] array = new int[length];
+        int oddValue = isOdd ? 1 : 0;
+        final int MAX = 100;
         int randomNumber;
-        StringBuilder stringBuilder = new StringBuilder();
-        //random odds
-        for (int i = 0; i < odds.length ; ) {
+        for (int i = 0; i < length;i++) {
             randomNumber = (int) (Math.random() * MAX);
-            odds[i++] = randomNumber % 2 == 0 ? randomNumber + 1 : randomNumber;
+            if(isOdd){
+                array[i] = randomNumber % 2 == 0 ? randomNumber + 1 : randomNumber;
+            }
+            else {
+                array[i] = randomNumber % 2 == 1 ? randomNumber + 1 : randomNumber;
+            }
         }
-        //random evens
-        for (int i = 0; i < evens.length ; ) {
-            randomNumber = (int)(Math.random() * MAX);
-            System.out.println(randomNumber);
-            evens[i++] = randomNumber % 2 == 1 ? randomNumber + 1 : randomNumber;
-        }
-        //combining
+        return array;
+    }
+    public static int[] combine(final int[] odds, final int[] evens){
+        int[] combined = new int[odds.length + evens.length];
         for (int i = 0,index = 0; i < combined.length ;index++) {
             combined[i++] = odds[index];
             combined[i++] = evens[index];
         }
-        //printing
-        System.out.println(Arrays.toString(combined));
-
-
+        return combined;
     }
 }
