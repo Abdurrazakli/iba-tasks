@@ -24,6 +24,9 @@ public class ArraysTasks {
         return array;
     }
     public static int[] combine(final int[] odds, final int[] evens){
+        if(odds.length != evens.length)
+            throw new IllegalArgumentException("Sizes should be equal!");
+
         int[] combined = new int[odds.length + evens.length];
         int SIZE = combined.length / 2;
         for (int i = 0; i < SIZE;i++) {
