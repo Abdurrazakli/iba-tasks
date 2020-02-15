@@ -1,8 +1,10 @@
 package lesson05.warmup;
 
-public class Arrays {
+import java.util.Arrays;
+
+public class ArraysTasks {
     public static void main(String[] args) {
-        int n = 20;
+        final int n = 5;
         int[] odds = new int[n];
         int[] evens = new int[n];
         int[] combined = new int[n * 2];
@@ -21,15 +23,13 @@ public class Arrays {
             evens[i++] = randomNumber % 2 == 1 ? randomNumber + 1 : randomNumber;
         }
         //combining
-        for (int i = 0; i < n ; i++) {
-            combined[i] = odds[i];
-            combined[i + 1] = evens[i];
+        for (int i = 0,index = 0; i < combined.length ;index++) {
+            combined[i++] = odds[index];
+            combined[i++] = evens[index];
         }
         //printing
-        for (int x:combined) {
-            stringBuilder.append(x);
-            stringBuilder.append(" ");
-        }
-        System.out.println(stringBuilder.toString());
+        System.out.println(Arrays.toString(combined));
+
+
     }
 }
