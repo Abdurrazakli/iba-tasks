@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ArraysTasks {
     public static void main(String[] args) {
         final int n = 5;
-        System.out.println(Arrays.toString(combine(fill(n,true),fill(n,false))));
+        System.out.printf("Combined: %s\n",Arrays.toString(combine(fill(n,true),fill(n,false))));
 
     }
     public static int[] fill(final int length,boolean isOdd){
@@ -25,9 +25,10 @@ public class ArraysTasks {
     }
     public static int[] combine(final int[] odds, final int[] evens){
         int[] combined = new int[odds.length + evens.length];
-        for (int i = 0,index = 0; i < combined.length ;index++) {
-            combined[i++] = odds[index];
-            combined[i++] = evens[index];
+        int SIZE = combined.length / 2;
+        for (int i = 0; i < SIZE;i++) {
+            combined[i * 2] = odds[i];
+            combined[i * 2 + 1] = evens[i];
         }
         return combined;
     }
