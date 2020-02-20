@@ -13,7 +13,6 @@ public class GeomApp {
     }
     int total_area = 0;
     for (Figure f: figures) {
-      System.out.println(f.getClass());
       total_area += f.area();
     }
 
