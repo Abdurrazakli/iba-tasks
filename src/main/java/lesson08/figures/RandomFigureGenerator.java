@@ -3,7 +3,7 @@ package lesson08.figures;
 public class RandomFigureGenerator {
     public Figure getRandomFigure(){
         int numberOfFigures = 3;
-        int figureDeterminer = (int)(Math.random() * 3);
+        int figureDeterminer = random_number(numberOfFigures);
         Figure figure = getRandomCircle();
         switch (figureDeterminer){
             case 0:
@@ -21,7 +21,7 @@ public class RandomFigureGenerator {
     }
     public Circle getRandomCircle(){
         int limiter = 50;
-        int radius = (int)(Math.random() * limiter);
+        int radius = random_number(limiter);
         return new Circle(getRandomPoint(),radius);
     }
     public Triangle getRandomTriangle(){
@@ -32,6 +32,9 @@ public class RandomFigureGenerator {
     }
     public Point getRandomPoint(){
         int limiter = 100;
-        return new Point((int)(Math.random() * 100),(int)(Math.random()) * 100);
+        return new Point( random_number(100),random_number(100));
+    }
+    public int random_number(int limiter){
+        return (int)(Math.random() * limiter);
     }
 }
