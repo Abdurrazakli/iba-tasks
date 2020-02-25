@@ -1,8 +1,9 @@
 package lesson09.testingExample;
 
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
+/*
 
     @Test
     void add() {
@@ -17,4 +18,5 @@ class CalculatorTest {
     @org.junit.jupiter.api.Test
     void testAdd() {
     }
+*/
 }
