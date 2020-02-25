@@ -7,4 +7,9 @@ public class Formatter1{
     public Formatter1(String message) {
         this.message = message;
     }
+
+    @Override
+    public String toString() {
+        return message.toLowerCase();
+    }
 }
