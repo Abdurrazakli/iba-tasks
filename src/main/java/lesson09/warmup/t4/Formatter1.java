@@ -1,18 +1,21 @@
 package lesson09.warmup.t4;
 
+public class Formatter1 implements Formattable {
 
+  private final Formattable f;
 
-public class Formatter1{
-    private String message;
-    public Formatter1(String message) {
-        this.message = message;
-    }
-    public Formatter1(Formatter3 fmt3){
-        this.message = fmt3.toString().toLowerCase();
-    }
+  public Formatter1(Formattable f) {
+    this.f = f;
+  }
 
-    @Override
-    public String toString() {
-        return message.toLowerCase();
-    }
+  public Formatter1() {
+    this(new FormatterPlain());
+  }
+
+  @Override
+  public String fmt(String orig) {
+    String step1 = f.fmt(orig);
+    String step2 = step1.toLowerCase();
+    return step2;
+  }
 }

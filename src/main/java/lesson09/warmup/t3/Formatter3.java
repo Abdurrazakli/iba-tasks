@@ -1,24 +1,20 @@
 package lesson09.warmup.t3;
 
+import java.util.Arrays;
 
+public class Formatter3 extends Formatter {
 
-public class Formatter3 {
-    String message;
-    public Formatter3(String message) {
-        this.message = message;
-    }
+  public Formatter3(String msg) {
+    super(msg);
+  }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        int n = message.length() + 3 * 2 ;
-        for (int i = 0; i < n; i++) {
-            sb.append("*");
-        }
-        sb.append(String.format("\n*  %s  *\n",message));
-        for (int i = 0; i < n; i++) {
-            sb.append("*");
-        }
-        return sb.toString();
-    }
+  @Override
+  protected String format(String origin) {
+    char[] chars = new char[origin.length() + 6];
+    Arrays.fill(chars, '*');
+    String header = new String(chars);
+    return String.format("%s\n*  %s  *\n%1$s\n", header, origin);
+//    IntStream.range(0, origin.length() + 6).forEach(i -> sb.append("*"));
+  }
+
 }

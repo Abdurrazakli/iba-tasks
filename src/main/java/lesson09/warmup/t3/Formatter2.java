@@ -1,14 +1,14 @@
 package lesson09.warmup.t3;
 
+public class Formatter2 extends Formatter {
 
-public class Formatter2{
-    String message;
-    public Formatter2(String message) {
-        this.message = message;
-    }
+  public Formatter2(String msg) {
+    super(msg);
+  }
 
-    @Override
-    public String toString() {
-        return message.toUpperCase();
-    }
+  @Override
+  protected String format(String origin) {
+    return origin.toUpperCase();
+  }
+
 }

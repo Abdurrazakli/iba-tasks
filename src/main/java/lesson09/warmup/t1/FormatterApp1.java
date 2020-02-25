@@ -10,36 +10,13 @@ public class FormatterApp1 {
     print("Hello", fmt1); // hello
     print("Hello", fmt2); // HELLO
     print("Hello", fmt3); // ***********
-                                  // *  Hello  *
-                                  // ***********
+                          // *  Hello  *
+                          // ***********
   }
-  private static void print(String message,Formatter0 fmt){
-    if(fmt instanceof Formatter1){
-      print1(message);
-    }
-    else if(fmt instanceof Formatter2){
-      print2(message);
-    }
-    else if(fmt instanceof Formatter3){
-      print3(message);
-    }
+
+  static void print(String message, Formatter0 fmt) {
+    String formatted = fmt.format(message);
+    System.out.println(formatted);
   }
-  private static void print1(String message){
-    System.out.println(message.toLowerCase());
-  }
-  private static void print2(String message){
-    System.out.println(message.toUpperCase());
-  }
-  private static void print3(String message){
-    StringBuilder sb = new StringBuilder();
-    int n = message.length() + 3 * 2 ;
-    for (int i = 0; i < n; i++) {
-      sb.append("*");
-    }
-    sb.append(String.format("\n*  %s  *\n",message));
-    for (int i = 0; i < n; i++) {
-      sb.append("*");
-    }
-    System.out.println(sb.toString());
-  }
+
 }

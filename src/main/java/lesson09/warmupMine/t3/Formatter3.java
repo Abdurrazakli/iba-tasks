@@ -1,9 +1,9 @@
-package lesson09.warmup.t4;
+package lesson09.warmupMine.t3;
 
 
 
 public class Formatter3 {
-    private String message;
+    String message;
     public Formatter3(String message) {
         this.message = message;
     }

@@ -1,5 +1,5 @@
 package lesson09.warmup.t1;
 
-public class Formatter0 {
-
+interface Formatter0 {
+  String format(String origin);
 }

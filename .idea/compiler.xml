@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="iba-tasks" />
+        <module name="tasks" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="iba-tasks" target="8" />
+      <module name="tasks" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
