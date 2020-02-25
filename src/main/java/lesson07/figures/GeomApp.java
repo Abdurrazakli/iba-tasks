@@ -1,4 +1,4 @@
-package lesson08.figures;
+package lesson07.figures;
 
 import java.util.ArrayList;
 

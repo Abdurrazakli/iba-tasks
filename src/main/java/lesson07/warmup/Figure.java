@@ -1,4 +1,4 @@
-package lesson08.warmup;
+package lesson07.warmup;
 
 public class Figure {
     public int area(){
