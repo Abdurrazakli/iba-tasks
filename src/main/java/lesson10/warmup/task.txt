@@ -1,0 +1,21 @@
+The string given, for example, "Hello worldd"
+
+TASK 1: count all letters occurrences and print them, like:
+H:1, e:1, l:3, ....
+
+TASK 2: count all character positions alongside with character
+H:<1>, e:<2>, l:<3,4,10>, ....
+
+TASK 3: combine task 1 & 2
+H:1:<1>, e:1:<2>, l:3:<3,4,10>, ....
+
+TASK 4. sort the output in the alphabetical order
+A:..:<...>, B:...:<...>....
+
+TASK 5. sort the output in the initial order of initial letter occurrence
+H:1:<1>, e:1:<2>, l:3:<3,4,10>, ....
+
+TASK 6. sort the output in the descending order of number of occurrences
+l:3:<3,4,10>, d:2:<11,12> ...
+
+P.S. We are the humans. We count from 1 not from 0
