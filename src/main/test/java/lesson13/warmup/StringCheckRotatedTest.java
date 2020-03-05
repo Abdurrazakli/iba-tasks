@@ -3,6 +3,7 @@ package lesson13.warmup;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class StringCheckRotatedTest {
@@ -37,5 +38,9 @@ class StringCheckRotatedTest {
   @Test
   void check5() {
     assertTrue(func.check("Hello World", "rldHello Wo"));
+  }
+  @Test
+  void check6() {
+    assertFalse(func.check("Hello World", "rldHellod Wo"));
   }
 }
