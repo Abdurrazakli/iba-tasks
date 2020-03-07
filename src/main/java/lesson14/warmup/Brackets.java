@@ -8,12 +8,14 @@ public class Brackets {
     int max = 0;
     int count = 0;
     for (int i = 0; i < origin.length(); i++) {
-        while(origin.charAt(i) == '('){
-          count++;
-          i++;
+        switch (origin.charAt(i)){
+          case '(':
+            count++;
+            break;
+          case ')':
+            max = Math.max(count,max);
+            count = 0;
         }
-          max = Math.max(count,max);
-          count = 0;
     }
     return max;
   }
