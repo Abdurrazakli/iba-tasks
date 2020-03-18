@@ -1,0 +1,9 @@
+hard skills:
+------------
+- algorithm basic
+- complexity, bigO notation
+- O(1), O(N), O(logN), O(N^2), O(NlogN)
+- sort: bubble sort, merge sort, quick sort
+- resources
+
+https://github.com/alexr007/algorithms.git
