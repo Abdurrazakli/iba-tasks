@@ -73,4 +73,27 @@ static int[] merge(int[] data1 , int[] data2){
         }
         return apples;
     }
+    private static List<Apple> mergeApplesByComparator(List<Apple> apples1, List<Apple> apples2,Comparator comparator) {
+        List<Apple> apples = new ArrayList<>();
+        int firstSize = apples1.size();
+        int secondSize = apples2.size();
+        int first = 0;
+        int second = 0;
+        while (first < firstSize && second < secondSize){
+            if(comparator.compare(apples1.get(first),apples2.get(second)) >= 1){
+                apples.add(apples1.get(first++));
+            }
+            else {
+                apples.add(apples2.get(second++));
+            }
+        }
+        while (first < firstSize){
+            apples.add(apples1.get(first++));
+        }
+        while (second < secondSize){
+            apples.add(apples2.get(second++));
+        }
+        return apples;
+    }
+
 }
