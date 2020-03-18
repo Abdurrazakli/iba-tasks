@@ -48,6 +48,8 @@ static int[] merge(int[] data1 , int[] data2){
         System.out.println(apples2);
         List<Apple> apples3 = mergeApples(apples1, apples2);
         System.out.println(apples3);
+        List<Apple> apples4 = mergeApplesByComparator(apples1, apples2,appleComparator);
+        System.out.println(apples4);
     }
 
     private static List<Apple> mergeApples(List<Apple> apples1, List<Apple> apples2) {
@@ -73,14 +75,14 @@ static int[] merge(int[] data1 , int[] data2){
         }
         return apples;
     }
-    private static List<Apple> mergeApplesByComparator(List<Apple> apples1, List<Apple> apples2,Comparator comparator) {
+    private static List<Apple> mergeApplesByComparator(List<Apple> apples1, List<Apple> apples2,Comparator<Apple> comparator) {
         List<Apple> apples = new ArrayList<>();
         int firstSize = apples1.size();
         int secondSize = apples2.size();
         int first = 0;
         int second = 0;
         while (first < firstSize && second < secondSize){
-            if(comparator.compare(apples1.get(first),apples2.get(second)) >= 1){
+            if(comparator.compare(apples1.get(first),apples2.get(second)) < 0){
                 apples.add(apples1.get(first++));
             }
             else {
