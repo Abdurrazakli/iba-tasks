@@ -20,4 +20,24 @@ public class InvertString {
     }
     return sb.toString();
   }
+  String toUpper(String origin) {
+    char[] chars = origin.toCharArray();
+    for (int i = 0; i < chars.length; i++) {
+      chars[i] = (char)((chars[i] | 0b100000)^0b100000);
+    }
+    return new String(chars);
+  }
+  String toLower(String origin) {
+    char[] chars = origin.toCharArray();
+    for (int i = 0; i < chars.length; i++) {
+      chars[i] = (char)(chars[i] | 0b100000);
+    }
+    return new String(chars);
+  }
+
+  public static void main(String[] args) {
+    InvertString is = new InvertString();
+    System.out.println(is.toLower("aBc"));
+    System.out.println(is.toUpper("aBc"));
+  }
 }
