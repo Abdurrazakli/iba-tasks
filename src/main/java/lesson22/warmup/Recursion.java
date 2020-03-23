@@ -2,7 +2,7 @@ package lesson22.warmup;
 
 import java.util.Arrays;
 
-public class SumArray {
+public class Recursion {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,6};
         int sum = sumArray(arr);
