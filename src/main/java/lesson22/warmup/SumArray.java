@@ -10,6 +10,14 @@ public class SumArray {
 
         System.out.println(sumTo(5));
         System.out.println(factorial(5));
+        System.out.println(fibonacci(5));
+    }
+
+    private static int fibonacci(int n) {
+        if(n==2 || n==1){
+            return 1;
+        }
+        return fibonacci(n-1) + fibonacci(n-2);
     }
 
     private static int factorial(int n) {
