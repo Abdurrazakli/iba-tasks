@@ -6,7 +6,6 @@ public class BinaryToInteger {
     int result = 0;
 
     for (int i = 0; i < binary.length() ; i++) {
-      if(binary.charAt(i)=='1')
       result += 1<<(binary.length() - i - 1);
     }
 
