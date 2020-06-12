@@ -51,6 +51,11 @@
             <artifactId>jetty-servlet</artifactId>
             <version>9.4.27.v20200227</version>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.8</version>
+        </dependency>
     </dependencies>
 
 </project>
